@@ -1,0 +1,69 @@
+html {
+    font-family: helvetica;
+    overflow-y: auto;
+    min-height: 100%;
+
+}
+
+body {
+    overflow-y: auto;
+    background-color: #259c82;
+}
+
+#wrapper {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.announceDiv {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+#playingBoard {
+    width: 500px;
+    height: 500px;
+    display: grid;
+    border: 5px solid black;
+    background-color: #706f6f;
+}
+
+.cell {
+    border: 1px solid black;
+    text-align: center;
+    border-bottom: 0;
+}
+
+.cell:hover {
+    background-color: #259c82;
+}
+.Xchoice {
+    background-image: url("X.jpg");
+    background-color: transparent;
+    background-position: center center;
+}
+
+.Ochoice {
+    background-image: url("O.jpg");
+    background-color: transparent;
+    background-position: center center;
+}
+
+#reset {
+    width: 167px;
+    height: 70px;
+    margin-left: 170px;
+    margin-top: 20px;
+    font-size: 20px;
+    background-color: #706f6f;
+    border: none;
+    border-radius: 10px;
+}
+
+#reset:hover {
+    background-color: #5a5a5a;
+}
