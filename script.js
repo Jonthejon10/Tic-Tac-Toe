@@ -66,11 +66,17 @@ const gameOver = (() => {       // to check if the game has been won or it is a 
         
         if (checkForClass(firstRow) == true || checkForClass(secondRow) == true || checkForClass(thirdRow) == true || checkForClass(firstColumn) == true || checkForClass(secondColumn) == true || checkForClass(thirdColumn) == true || checkForClass(firstDiagonal) == true || checkForClass(secondDiagonal) == true) {
             announceDiv.textContent = `${player}` + " won !";
-            playingBoard.style.pointerEvents = 'none';
+            
+            cellsArr.forEach((cell) => {
+				cell.style.pointerEvents = 'none'
+			})
         } else if (checkForDraw('chosen')) {
             if (!(announceDiv.textContent == "Player X won !" || announceDiv.textContent == "Player O won !")) {
-                playingBoard.style.pointerEvents = 'none';
                 announceDiv.textContent = "It's a draw !";
+                
+                cellsArr.forEach((cell) => {
+					cell.style.pointerEvents = 'none'
+			    })
             };
         };
     };
@@ -87,10 +93,16 @@ const reset = (() => {      // reseting the game board
 
         cellsArr.forEach((cell) => {
             cell.classList.remove('Xchoice', 'Ochoice', 'chosen');
-            cell.style.pointerEvents = 'auto';
+            cell.style.pointerEvents = 'auto'
         });
         
         player1TookTurn = false;
 
     });
 })();
+
+const git_btn = document.getElementById('git_btn')
+
+git_btn.addEventListener('click', () => {
+	window.open('https://github.com/Jonthejon10')
+})
